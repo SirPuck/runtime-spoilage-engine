@@ -71,43 +71,20 @@ function swap_funcs.hotswap_in_underground_belt(result, entity, rse_definition)
     end
 end
 
----@param lines LuaTransportLine[]
----@param placeholder string
----@param result string
-local function _hotswap_in_splitter_lines(lines, placeholder, result)
-    for _, line in pairs(lines) do
-        for i = 1, #line do
-            local stack = line[i]
-            if stack.valid_for_read and stack.name == placeholder then
-                swap_funcs.set_or_nil_stack(stack, result)
-                return
-            end
-        end
-    end
-end
-
 --- @param entity LuaEntity (we assume source_entity and target_entity are the same).
 --- @param rse_definition RtRseDefinition the name of the placeholder item.
 --- @return nil
 function swap_funcs.hotswap_in_splitter(result, entity, rse_definition)
     local placeholder_name = rse_definition.name
-    local transport_lines = {entity.get_transport_line(1), entity.get_transport_line(2)}
-
-    for _, line in pairs(transport_lines) do
-        if #line.input_lines == 0 then
-            goto continue
+    for line =1, 4 do
+        local line = entity.get_transport_line(line)
+        for i = 1, #line do
+            local stack = line[i]
+            if stack.name ==  placeholder_name then
+                swap_funcs.set_or_nil_stack(stack, result)
+                return
+            end
         end
-        for i = 1, #line.input_lines do
-            _hotswap_in_splitter_lines(line.input_lines, placeholder_name, result)
-        end
-        ::continue::
-        if #line.output_lines == 0 then
-            goto next_iter
-        end
-        for i = 1, #line.output_lines do
-            _hotswap_in_splitter_lines(line.output_lines, placeholder_name, result)
-        end
-        ::next_iter::
     end
 end
 
