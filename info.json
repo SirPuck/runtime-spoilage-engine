@@ -1,0 +1,12 @@
+{
+	"name": "runtime-spoilage-engine",
+	"version": "1.0.0",
+	"title": "Runtime Spoilage Engine",
+	"author": "SirPuck",
+	"homepage": "https://discord.gg/DBW37M34NX",
+	"contact": "Discord : puke0417",
+	"dependencies": ["base  >= 2.1.7"],
+	"spoiling_required": true,
+	"description": "Internal mod used to implement items hotswapping on spoilage. RSE allows you to define a set of spoil results for an item, rather than a unique spoil result.",
+	"factorio_version": "2.1"
+}
