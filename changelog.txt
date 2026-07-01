@@ -1,5 +1,10 @@
 ---------------------------------------------------------------------------------------------------
-Version: 0.1.0
+Version: 1.0.1
+Date: 2026-07-01
+  Bugfixes:
+    - Fix an issue in the splitter hotswap function preventing RSE from replacing items inside splitters.
+---------------------------------------------------------------------------------------------------
+Version: 1.0.0
 Date: 01. 07. 2026
   Major Features:
     - Runtime Spoilage Library becomes RSE: Runtime Spoilage Engine.
