@@ -75,3 +75,28 @@ local random = {
         }
     }
 }
+
+data.raw["item"]["iron-plate"].spoil_ticks = 120
+
+local random_ex = {
+    type = "mod-data",
+    name = "john",
+    data_type = "rse_registration",
+    data = {
+        original_item_type = "item",
+        original_item_name = "iron-plate",
+        placeholder_spoil_into_self = true,
+        results = {
+            {
+                name = "iron-plate",
+                weight = 1
+            },
+            {
+                name = "iron-plate",
+                weight = 2
+            }
+        }
+    }
+}
+
+data:extend{random_ex}

@@ -1,4 +1,9 @@
 ---------------------------------------------------------------------------------------------------
+Version: 1.0.2
+Date: 2026-07-12
+  Changes:
+    - When an item spoils in an assembler inventory, RSE now tries to insert the result in this inventory first, and fallbacks on the trash inventory.
+---------------------------------------------------------------------------------------------------
 Version: 1.0.1
 Date: 2026-07-01
   Bugfixes:
